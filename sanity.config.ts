@@ -3,16 +3,35 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
-export default defineConfig({
-  name: 'default',
-  title: 'Yakkr Growth Error Logger',
+export default defineConfig([
+  {
+    projectId: 'bbov375k',
 
-  projectId: 'bbov375k',
-  dataset: 'production',
+    name: 'production',
+    title: 'Production Dataset',
 
-  plugins: [deskTool(), visionTool()],
+    dataset: 'production',
+    basePath: '/production',
 
-  schema: {
-    types: schemaTypes,
+    plugins: [deskTool(), visionTool()],
+
+    schema: {
+      types: schemaTypes,
+    },
   },
-})
+  {
+    projectId: 'bbov375k',
+
+    name: 'staging',
+    title: 'Staging Dataset',
+
+    dataset: 'staging',
+    basePath: '/staging',
+
+    plugins: [deskTool(), visionTool()],
+
+    schema: {
+      types: schemaTypes,
+    },
+  },
+])

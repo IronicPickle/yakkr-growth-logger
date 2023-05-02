@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import error from './error'
+
+export const schemaTypes = [error]
